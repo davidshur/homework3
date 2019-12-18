@@ -63,5 +63,4 @@ const generatePassword = () => {
   } else {
     textarea.value = populateCharacters(userLength);
   }
-
 }

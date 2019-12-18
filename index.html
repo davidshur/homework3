@@ -18,13 +18,13 @@
   </head>
   <body>
     <div class='container'>
-      <div class='card m-4'>
-        <div class='card-header'>Password Generator</div>
+      <h1 class='text-center m-4'>Password Generator</h1>
+      <div class='card shadow m-4'>
         <div class='card-body'>
           <div class='form'>
             <div class='form-group'>
               <label for='passwordLength'>Password Length</label>
-              <input type='number' class='form-control' id='passwordLength' aria-describedby='lengthHelp'>
+              <input type='number' class='form-control col-md-6 col-lg-4' id='passwordLength' aria-describedby='lengthHelp'>
               <small id='lengthHelp' class='form-text text-muted'>Please enter a number between 8 and 128.</small>
             </div>
             <div class='form-group'>
@@ -49,7 +49,14 @@
             </div>
 
           </div>
-
+          <div>
+            <h4>Generate your Password</h4>
+            <hr />
+            <div class='form-group'>
+              <textarea readonly id='textarea' class='form-control dashed text-center' rows='5' placeholder='Your Secure Password'></textarea>
+            </div>
+            <hr />
+            <button id='submit' type='submit' class='btn btn-primary btn-lg'>Generate Password</button>
         </div>
       </div>
     </div>

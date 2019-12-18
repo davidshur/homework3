@@ -14,24 +14,39 @@ const special = [
   ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
 ];
 
-let lowercaseChecked = document.querySelector('#lowercase').checked;
-let uppercaseChecked = document.querySelector('#uppercase').checked;
-let numericalChecked = document.querySelector('#numerical').checked;
-let specialChecked = document.querySelector('#special').checked;
-// lowercaseChecked, uppercaseChecked, numericalChecked, specialChecked
+const myCharacters = () => {
+  let characterArr = [];
 
-const makeCharacterArr = () => {
-  let myCharacters = [...lowercase, ...uppercase, ...numerical, ...special];
-  return myCharacters;
+  let lowercaseCheck = document.querySelector('#lowercase').checked;
+  let uppercaseCheck = document.querySelector('#uppercase').checked;
+  let numericalCheck = document.querySelector('#numerical').checked;
+  let specialCheck = document.querySelector('#special').checked;
+
+  if (lowercaseCheck === true) {
+    characterArr.push(...lowercase);
+  }
+  if (uppercaseCheck === true) {
+    characterArr.push(...uppercase);
+  }
+  if (numericalCheck === true) {
+    characterArr.push(...numerical);
+  }
+  if (specialCheck === true) {
+    characterArr.push(...special);
+  }
+  return characterArr;
 }
 
 const populateCharacters = len => {
   let myPassword = [];
   for (let i = 0; i < len; i++) {
-    let randomNumberBetween = Math.floor(Math.random() * makeCharacterArr().length);
-    myPassword.push(makeCharacterArr()[randomNumberBetween]);
+    let randomNumberBetween = Math.floor(Math.random() * myCharacters().length);
+    myPassword.push(myCharacters()[randomNumberBetween]);
   }
   return myPassword.join('');
 }
 
-console.log(populateCharacters(8));
+const generatePassword = () => {
+  let userLength = document.querySelector('#passwordLength').value;
+  console.log(populateCharacters(userLength));
+}

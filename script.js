@@ -60,7 +60,8 @@ const generatePassword = () => {
     alert('Please enter a password length between 8 and 128!');
   } else if (lowercaseCheck !== true && uppercaseCheck !== true && numericalCheck !== true && specialCheck !== true) {
     alert('Please check the box of at least 1 character type!');
+  } else {
+    textarea.value = populateCharacters(userLength);
   }
 
-  textarea.value = populateCharacters(userLength);
 }

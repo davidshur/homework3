@@ -20,7 +20,7 @@ const randomChar = len => {
     let randomNumberBetween = Math.floor(Math.random() * lowercase.length);
     myPassword.push(lowercase[randomNumberBetween]);
   }
-  return myPassword;
+  return myPassword.join('');
 }
 
 randomChar(8);

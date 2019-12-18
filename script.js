@@ -13,3 +13,12 @@ const special = [
   ' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/',
   ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
 ];
+
+const randomChar = len => {
+  for (let i = 0; i < len; i++) {
+    let randomNumberBetween = Math.floor(Math.random() * lowercase.length);
+    return lowercase[randomNumberBetween];
+  }
+}
+
+console.log(randomChar(8));

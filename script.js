@@ -14,15 +14,25 @@ const special = [
   ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'
 ];
 
-const randomChar = len => {
+let lowercaseChecked = document.querySelector('#lowercase').checked;
+let uppercaseChecked = document.querySelector('#uppercase').checked;
+let numericalChecked = document.querySelector('#numerical').checked;
+let specialChecked = document.querySelector('#special').checked;
+
+
+const makeCharacterArr = (isChecked1, isChecked2, isChecked3, isChecked4) => {
+  let myCharacters = [];
+
+  return myCharacters;
+}
+
+const populateCharacters = len => {
   let myPassword = [];
   for (let i = 0; i < len; i++) {
     let randomNumberBetween = Math.floor(Math.random() * lowercase.length);
-    myPassword.push(lowercase[randomNumberBetween]);
+    myPassword.push(myCharacters[randomNumberBetween]);
   }
   return myPassword.join('');
 }
 
-randomChar(8);
-
-console.log(randomChar(8));
+console.log(populateCharacters(8));

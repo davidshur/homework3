@@ -39,28 +39,37 @@ const myCharacters = () => {
 }
 
 const populateCharacters = len => {
-  let myPassword = [];
+  const myPassword = [];
+  const characters = myCharacters();
+
   for (let i = 0; i < len; i++) {
-    let randomNumberBetween = Math.floor(Math.random() * myCharacters().length);
-    myPassword.push(myCharacters()[randomNumberBetween]);
+    const randomNumberBetween = Math.floor(Math.random() * characters.length);
+    myPassword.push(characters[randomNumberBetween]);
   }
+
   return myPassword.join('');
 }
 
 const generatePassword = () => {
-  let userLength = document.querySelector('#passwordLength').value;
-  let textarea = document.querySelector('#textarea');
+  const passwordLength = document.querySelector('#passwordLength').value;
+  const textarea = document.querySelector('#textarea');
 
-  let lowercaseCheck = document.querySelector('#lowercase').checked;
-  let uppercaseCheck = document.querySelector('#uppercase').checked;
-  let numericalCheck = document.querySelector('#numerical').checked;
-  let specialCheck = document.querySelector('#special').checked;
+  const lowercaseCheck = document.querySelector('#lowercase').checked;
+  const uppercaseCheck = document.querySelector('#uppercase').checked;
+  const numericalCheck = document.querySelector('#numerical').checked;
+  const specialCheck = document.querySelector('#special').checked;
 
-  if (userLength < 8 || userLength > 128) {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert('Please enter a password length between 8 and 128!');
   } else if (lowercaseCheck !== true && uppercaseCheck !== true && numericalCheck !== true && specialCheck !== true) {
     alert('Please check the box of at least 1 character type!');
   } else {
-    textarea.value = populateCharacters(userLength);
+    textarea.value = populateCharacters(passwordLength);
   }
+}
+
+const copyToClipboard = () => {
+  const copyText = document.querySelector('#textarea');
+  copyText.select();
+  document.execCommand("copy");
 }

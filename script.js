@@ -18,19 +18,18 @@ let lowercaseChecked = document.querySelector('#lowercase').checked;
 let uppercaseChecked = document.querySelector('#uppercase').checked;
 let numericalChecked = document.querySelector('#numerical').checked;
 let specialChecked = document.querySelector('#special').checked;
+// lowercaseChecked, uppercaseChecked, numericalChecked, specialChecked
 
-
-const makeCharacterArr = (isChecked1, isChecked2, isChecked3, isChecked4) => {
-  let myCharacters = [];
-
+const makeCharacterArr = () => {
+  let myCharacters = [...lowercase, ...uppercase, ...numerical, ...special];
   return myCharacters;
 }
 
 const populateCharacters = len => {
   let myPassword = [];
   for (let i = 0; i < len; i++) {
-    let randomNumberBetween = Math.floor(Math.random() * lowercase.length);
-    myPassword.push(myCharacters[randomNumberBetween]);
+    let randomNumberBetween = Math.floor(Math.random() * makeCharacterArr().length);
+    myPassword.push(makeCharacterArr()[randomNumberBetween]);
   }
   return myPassword.join('');
 }

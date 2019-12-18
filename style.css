@@ -10,6 +10,14 @@ body {
   border-radius: 30px;
 }
 
+#submit {
+  float: left;
+}
+
+#copy {
+  float: right;
+}
+
 .form-control[readonly] {
   background-color: #ffffff;
 }

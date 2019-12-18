@@ -53,11 +53,28 @@
             <h4>Generate your Password</h4>
             <hr />
             <div class='form-group'>
-              <textarea readonly id='textarea' class='form-control dashed text-center' rows='5' placeholder='Your Secure Password'></textarea>
+              <textarea readonly id='textarea'
+                        class='form-control dashed text-center'
+                        rows='5'
+                        placeholder='Your Secure Password'
+              >
+              </textarea>
             </div>
             <hr />
-            <button id='submit' type='submit' onclick='generatePassword()' class='btn btn-primary btn-lg float-left'>Generate Password</button>
-            <button id='copy' type='button' onclick='copyToClipboard()' class='btn btn-secondary btn-lg float-right'>Copy to Clipboard</button>
+            <button id='submit'
+                    type='submit'
+                    onclick='generatePassword()'
+                    class='btn btn-primary btn-lg col-md-6 col-lg-4 mb-2'
+            >
+              Generate Password
+            </button>
+            <button id='copy'
+                    type='button'
+                    onclick='copyToClipboard()'
+                    class='btn btn-secondary btn-lg col-md-6 col-lg-4 mb-2'
+            >
+              Copy to Clipboard
+            </button>
         </div>
       </div>
     </div>

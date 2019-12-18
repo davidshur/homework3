@@ -15,10 +15,14 @@ const special = [
 ];
 
 const randomChar = len => {
+  let myPassword = [];
   for (let i = 0; i < len; i++) {
     let randomNumberBetween = Math.floor(Math.random() * lowercase.length);
-    return lowercase[randomNumberBetween];
+    myPassword.push(lowercase[randomNumberBetween]);
   }
+  return myPassword;
 }
+
+randomChar(8);
 
 console.log(randomChar(8));

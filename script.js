@@ -15,12 +15,12 @@ const special = [
 ];
 
 const myCharacters = () => {
-  let characterArr = [];
+  const characterArr = [];
 
-  let lowercaseCheck = document.querySelector('#lowercase').checked;
-  let uppercaseCheck = document.querySelector('#uppercase').checked;
-  let numericalCheck = document.querySelector('#numerical').checked;
-  let specialCheck = document.querySelector('#special').checked;
+  const lowercaseCheck = document.querySelector('#lowercase').checked;
+  const uppercaseCheck = document.querySelector('#uppercase').checked;
+  const numericalCheck = document.querySelector('#numerical').checked;
+  const specialCheck = document.querySelector('#special').checked;
 
   if (lowercaseCheck === true) {
     characterArr.push(...lowercase);
